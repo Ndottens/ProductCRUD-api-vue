@@ -31,7 +31,7 @@ class ProductController extends Controller
        $request->validated();
        $product = Product::create($request->all());
 
-       return response()->json(['message' => 'Product successfully created!']);
+       return response()->json(['message' => 'Product successfully created!', 'product' => $product]);
     }
 
     /**
@@ -57,11 +57,10 @@ class ProductController extends Controller
     public function update(ProductRequest $request, Product $product): JsonResponse
     {
         $request->validated();
-
         $product = Product::findOrFail($product->id);
         $product->update($request->all());
 
-        return response()->json(['message' => 'Product successfully updateds!']);
+        return response()->json(['message' => 'Product successfully updated!', 'product' => $product]);
     }
 
     /**

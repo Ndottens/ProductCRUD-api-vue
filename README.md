@@ -8,6 +8,7 @@ This project contains the following features
 - Notifications
 - Language support
 
+![dashboard](dashboard.png)
 ##Todo's
 
 - Upload images
