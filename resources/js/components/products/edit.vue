@@ -20,7 +20,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="title">Title</label>
+                            <label for="title">Create</label>
                             <input type="text" class="form-control" id="title" placeholder="Enter title" v-model="form.title">
                             <small class="text-danger">{{ errors ? errors.title ? errors.title[0] + '*' : '' : '' }}</small>
                         </div>
