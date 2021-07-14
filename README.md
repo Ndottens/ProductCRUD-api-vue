@@ -9,6 +9,7 @@ This project contains the following features
 - Language support
 
 ![dashboard](dashboard.png)
+
 ##Todo's
 
 - Upload images
