@@ -25,7 +25,7 @@
                             <small class="text-danger">{{ errors ? errors.title ? errors.title[0] + '*' : '' : '' }}</small>
                         </div>
                         <div class="form-group">
-                            <label for="description">Title</label>
+                            <label for="description">Create</label>
                             <textarea class="form-control" id="description" v-model="form.description"
                                       placeholder="Enter description"></textarea>
                             <small class="text-danger">{{ errors ? errors.description ? errors.description[0] + '*' : '' : '' }}</small>
