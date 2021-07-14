@@ -10,9 +10,4 @@ This project contains the following features
 
 ![dashboard](dashboard.png)
 
-##Todo's
-
-- Upload images
-- Authentication
-
 
