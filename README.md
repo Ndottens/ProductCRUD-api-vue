@@ -24,6 +24,7 @@ Setup your env file (database)
 - php artisan migrate
 - php artisan db:seed (Seeder for categories)
 - php artisan serve
+- php artisan storage:link 
 - npm run watch
 
 ## Project Structure
