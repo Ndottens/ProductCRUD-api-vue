@@ -20,6 +20,8 @@
                     <p class="font-weight-bolder">Created At:
                         <span class="font-weight-normal">{{ formatDate(product.created_at) }}</span>
                     </p>
+
+                    <img :src="'http://127.0.0.1:8000/storage/' + product.image" v-if="product.image" style="width: 300px; height: 300px;" alt="image">
                 </div>
             </div>
         </div>
