@@ -32,6 +32,15 @@
                                 errors ? errors.description ? errors.description[0] + '*' : '' : '' }}</small>
                     </div>
 
+                    <div class="form-group">
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="customFile" @change="uploadFile">
+                            <label class="custom-file-label" for="customFile">{{ fileName ? fileName : 'Choose File' }}</label>
+                         </div>
+                          <small class="text-danger">{{
+                                errors ? errors.photo ? errors.photo[0] + '*' : '' : '' }}</small>
+                    </div>
+
                     <button class="btn btn-sm btn-outline-success float-right" @click="save">Submit</button>
 
                 </div>
@@ -51,14 +60,32 @@ export default {
             form: {
                 title: null,
                 description: null,
-                category_id: null
+                category_id: null,
             },
+            photo: null,
+            fileName: null,
             errors: null
         }
     },
     methods: {
+        uploadFile(event) {
+            this.photo = event.target.files[0]
+            this.fileName = event.target.files[0].name
+        },
+
         save() {
-            Product.store(this.form).then(({data}) => {
+            const data = new FormData();         
+            data.append('photo', this.photo);
+            
+            for (const key in this.form) {
+                data.append(`${key}`, this.form[key])
+            }
+
+            Product.store(data, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            }).then(({data}) => {
                 this.$root.$emit('success', data.message)
                 this.$router.push({name: 'products.show', params: { id: data.product.id }})
             }).catch((error) => {
