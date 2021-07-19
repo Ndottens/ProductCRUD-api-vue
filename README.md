@@ -6,12 +6,12 @@ This project contains the following features
 - CRUD system
 - Validation (Frontend/Backend)
 - Error/Success notifications
+- Image upload
 
 ![dashboard](dashboard.png)
 
 ## Todos
 - Language support
-- Image upload
 - Re-usable components.
 
 ## Install Guide
