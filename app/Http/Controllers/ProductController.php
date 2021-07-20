@@ -55,7 +55,6 @@ class ProductController extends Controller
      */
     public function update(ProductRequest $request, Product $product): JsonResponse
     {
-        $request->validated();
         $product = Product::findOrFail($product->id);
         $product->update($request->all());
 
