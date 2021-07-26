@@ -41,8 +41,6 @@ class ProductController extends Controller
      */
     public function show(Product $product): JsonResponse
     {
-        $product = Product::findOrFail($product->id);
-
         return response()->json($product);
     }
 
@@ -55,7 +53,6 @@ class ProductController extends Controller
      */
     public function update(ProductRequest $request, Product $product): JsonResponse
     {
-        $product = Product::findOrFail($product->id);
         $product->update($request->all());
 
         return response()->json(['message' => 'Product successfully updated!', 'product' => $product]);
@@ -69,7 +66,6 @@ class ProductController extends Controller
      */
     public function destroy(Product $product): JsonResponse
     {
-        $product = Product::findOrFail($product->id);
         $product->delete();
 
         return response()->json(['message' => 'Product successfully deleted!']);
