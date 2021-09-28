@@ -8,7 +8,7 @@ This project contains the following features
 - Error/Success notifications
 - Image upload
 
-![dashboard](dashboard.png)
+![Dashboard](darktheme.png)
 
 ## Todos
 - Language support
