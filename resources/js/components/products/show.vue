@@ -1,11 +1,11 @@
 <template>
     <div class="row">
         <div class="col-md-12">
-            <u class="btn" @click="navigateToDashboard">Dashboard</u>
-            <div class="btn btn-sm btn-outline-primary float-right mt-1" @click="navigateToEdit">Edit Product</div>
+            <u class="btn font-weight-normal text-white" @click="navigateToDashboard">Dashboard</u>
+            <div class="btn btn-sm btn-outline-primary text-white float-right mt-1" @click="navigateToEdit">Edit Product</div>
         </div>
         <div class="col-md-12">
-            <div class="card">
+            <div class="card bg-dark text-white">
                 <div class="card-header">Products</div>
                 <div class="card-body" v-if="product">
                     <p class="font-weight-bolder">Title:
@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import Product from './modules/product'
+import Product from './module/product'
 import moment from 'moment'
 
 export default {

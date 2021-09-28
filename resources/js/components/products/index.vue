@@ -1,20 +1,20 @@
 <template>
     <div class="row">
         <div class="col-md-12">
-            <p class="btn">Dashboard</p>
-            <div class="btn btn-sm btn-outline-success float-right mt-1" @click="navigateToCreate">Create Product</div>
+            <p class="btn text-white font-weight-normal">Dashboard | Dark themed</p>
+            <div class="btn btn-sm btn-outline-success text-success float-right mt-1" @click="navigateToCreate">Create Product</div>
         </div>
         <div class="col-md-12">
-            <div class="card">
+            <div class="card text-white bg-dark">
                 <div class="card-header">Products</div>
                 <div class="card-body">
-                    <table class="table table-striped" v-if="products">
+                    <table class="table table-striped table-dark" v-if="products">
                         <thead>
                         <tr>
-                            <th scope="col">Title</th>
-                            <th scope="col">Description</th>
-                            <th scope="col">Category</th>
-                            <th scope="col">Actions</th>
+                            <th scope="col" class="text-white font-weight-normal">Title</th>
+                            <th scope="col" class="text-white font-weight-normal">Description</th>
+                            <th scope="col" class="text-white font-weight-normal">Category</th>
+                            <th scope="col" class="text-white font-weight-normal">Actions</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -23,9 +23,9 @@
                             <td>{{ product.description }}</td>
                             <td>{{ product.category ? product.category.title : '' }}</td>
                             <td>
-                                <i class="fas fa-eye" @click="show(product.id)"></i>
-                                <i class="fas fa-edit" @click="edit(product.id)"></i>
-                                <i class="fas fa-trash-alt" @click="destroy(product.id)"></i>
+                                <i class="fas fa-eye text-success" @click="show(product.id)"></i>
+                                <i class="fas fa-edit text-info" @click="edit(product.id)"></i>
+                                <i class="fas fa-trash-alt text-danger" @click="destroy(product.id)"></i>
                             </td>
                         </tr>
                         </tbody>
@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import Product from './modules/product'
+import Product from './module/product'
 
 export default {
     name: 'ProductIndex',

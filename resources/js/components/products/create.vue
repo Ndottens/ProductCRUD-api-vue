@@ -2,15 +2,15 @@
     <div class="row">
         <div class="col-md-12">
             <p>
-                <u class="btn" @click="navigateToDashboard">Dashboard</u>
+                <u class="btn text-white font-weight-normal" @click="navigateToDashboard">Dashboard</u>
             </p>
         </div>
         <div class="col-md-12">
-            <div class="card">
-                <div class="card-header">Create Form</div>
+            <div class="card bg-dark text-white">
+                <div class="card-header text-white">Create Form</div>
                 <div class="card-body">
                     <div class="form-group">
-                        <label for="category">Category</label>
+                        <label for="category" class="text-white">Category</label>
                         <select class="form-control" id="category" v-model="form.category_id">
                             <option value="null">Choose Product</option>
                             <option v-for="category in categories" :value="category.id">{{ category.title }}</option>
@@ -20,12 +20,12 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="title">Title</label>
+                        <label for="title" class="text-white">Title</label>
                         <input type="text" class="form-control" id="title" placeholder="Enter title" v-model="form.title">
                         <small class="text-danger">{{ errors ? errors.title ? errors.title[0] + '*' : '' : '' }}</small>
                     </div>
                     <div class="form-group">
-                        <label for="description">Description</label>
+                        <label for="description" class="text-white">Description</label>
                         <textarea class="form-control" id="description" v-model="form.description"
                                   placeholder="Enter description"></textarea>
                         <small class="text-danger">{{
@@ -33,9 +33,9 @@
                     </div>
 
                     <div class="form-group">
-                        <div class="custom-file">
+                        <div class="custom-file text-white">
                             <input type="file" class="custom-file-input" id="customFile" @change="uploadFile">
-                            <label class="custom-file-label" for="customFile">{{ fileName ? fileName : 'Choose File' }}</label>
+                            <label class="custom-file-label text-white" for="customFile">{{ fileName ? fileName : 'Choose File' }}</label>
                          </div>
                           <small class="text-danger">{{
                                 errors ? errors.photo ? errors.photo[0] + '*' : '' : '' }}</small>
@@ -50,7 +50,7 @@
 </template>
 
 <script>
-import Product from './modules/product'
+import Product from './module/product'
 
 export default {
     name: 'ProductCreate',
@@ -74,9 +74,9 @@ export default {
         },
 
         save() {
-            const data = new FormData();         
+            const data = new FormData();
             data.append('photo', this.photo);
-            
+
             for (const key in this.form) {
                 data.append(`${key}`, this.form[key])
             }
