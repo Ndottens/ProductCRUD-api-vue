@@ -2,11 +2,11 @@
     <div class="row">
         <div class="col-md-12">
             <p>
-                <u class="btn" @click="navigateToDashboard">Dashboard</u>
+                <u class="btn font-weight-normal text-white" @click="navigateToDashboard">Dashboard</u>
             </p>
         </div>
         <div class="col-md-12">
-            <div class="card">
+            <div class="card bg-dark text-white">
                 <div class="card-header">Edit Form</div>
                 <div class="card-body" v-if="form">
                     <div class="form-group">
@@ -44,7 +44,7 @@
 </template>
 
 <script>
-import Product from './modules/product'
+import Product from './module/product'
 
 export default {
     name: 'ProductEdit',
