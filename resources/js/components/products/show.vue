@@ -5,23 +5,28 @@
             <div class="btn btn-sm btn-outline-primary text-white float-right mt-1" @click="navigateToEdit">Edit Product</div>
         </div>
         <div class="col-md-12">
-            <div class="card bg-dark text-white">
-                <div class="card-header">Products</div>
-                <div class="card-body" v-if="product">
-                    <p class="font-weight-bolder">Title:
-                        <span class="font-weight-normal">{{ product.title }}</span>
-                    </p>
-                    <p class="font-weight-bolder">Description:
-                        <span class="font-weight-normal">{{ product.description }}</span>
-                    </p>
-                    <p class="font-weight-bolder">Category:
-                        <span class="font-weight-normal">{{ product.category ? product.category.title : '' }}</span>
-                    </p>
-                    <p class="font-weight-bolder">Created At:
-                        <span class="font-weight-normal">{{ formatDate(product.created_at) }}</span>
-                    </p>
 
-                    <img :src="'http://127.0.0.1:8000/storage/' + product.image" v-if="product.image" style="width: 300px; height: 300px;" alt="image">
+            <div class="card bg-dark text-white">
+                <div class="row no-gutters">
+                    <div class="col-auto">
+                        <img class="img-fluid" :src="'http://127.0.0.1:8000/storage/' + product.image" v-if="product ? product.image: false" style="width: 300px; height: 300px;" alt="image">
+                    </div>
+                    <div class="col">
+                        <div class="card-body px-5 mt-5" v-if="product">
+                            <p class="font-weight-bolder">Title:
+                                <span class="font-weight-normal">{{ product.title }}</span>
+                            </p>
+                            <p class="font-weight-bolder">Description:
+                                <span class="font-weight-normal">{{ product.description }}</span>
+                            </p>
+                            <p class="font-weight-bolder">Category:
+                                <span class="font-weight-normal">{{ product.category ? product.category.title : '' }}</span>
+                            </p>
+                            <p class="font-weight-bolder">Created At:
+                                <span class="font-weight-normal">{{ product.created_at }}</span>
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -30,7 +35,6 @@
 
 <script>
 import Product from './module/product'
-import moment from 'moment'
 
 export default {
     name: 'ProductShow',
@@ -40,10 +44,6 @@ export default {
         }
     },
     methods: {
-        formatDate(date) {
-            return moment(date).format('DD-MM-YYYY hh:mm:ss');
-        },
-
         navigateToDashboard() {
             this.$router.push({name: 'products.index'})
         },
