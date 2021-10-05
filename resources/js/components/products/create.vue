@@ -95,7 +95,7 @@ export default {
         },
 
         loadCategories() {
-            Product.load().then(({data}) => {
+            Product.loadCategories().then(({data}) => {
                 this.categories = data
             }).catch((error) => {
                 this.$root.$emit('error', error)

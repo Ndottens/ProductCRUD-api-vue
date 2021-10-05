@@ -22,7 +22,7 @@ export default class Product {
         return axios.get(`http://127.0.0.1:8000/api/products/${id}`)
     }
 
-    static load() {
+    static loadCategories() {
         return axios.get('http://127.0.0.1:8000/api/categories')
     }
 }
