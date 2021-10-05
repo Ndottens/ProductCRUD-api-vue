@@ -85,6 +85,7 @@ export default {
             Product.destroy(id).then(({data}) => {
                 this.$root.$emit('success', data.message)
                 this.loadTable()
+                this.$root.$emit('categories-update')
             }).catch((error) => {
                 this.$root.$emit('error', error)
             })

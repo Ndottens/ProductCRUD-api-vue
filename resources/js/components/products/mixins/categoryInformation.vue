@@ -46,6 +46,10 @@
         },
         mounted() {
             this.loadCategories()
+
+            this.$root.$on('categories-update', () => {
+                this.loadCategories()
+            }).$nextTick()
         },
     }
 </script>
