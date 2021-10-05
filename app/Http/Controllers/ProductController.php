@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\JsonMessages;
 use App\Http\Requests\ProductRequest;
 use App\Models\Product;
 use Illuminate\Http\JsonResponse;
@@ -30,7 +31,7 @@ class ProductController extends Controller
         $file = $request->file('photo')->store('images', 'public');
         $product = Product::create($request->except('photo') + ['image' => $file]);
 
-        return response()->json(['message' => 'Product successfully created!', 'product' => $product]);
+        return response()->json(['message' => JsonMessages::StoreMessage, 'product' => $product]);
     }
 
     /**
@@ -55,7 +56,7 @@ class ProductController extends Controller
     {
         $product->update($request->all());
 
-        return response()->json(['message' => 'Product successfully updated!', 'product' => $product]);
+        return response()->json(['message' => JsonMessages::UpdateMessage, 'product' => $product]);
     }
 
     /**
@@ -68,6 +69,6 @@ class ProductController extends Controller
     {
         $product->delete();
 
-        return response()->json(['message' => 'Product successfully deleted!']);
+        return response()->json(['message' => JsonMessages::DestroyMessage]);
     }
 }

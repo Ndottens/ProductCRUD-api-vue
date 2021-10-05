@@ -62,7 +62,7 @@ export default {
     methods: {
         loadTable() {
             Product.index().then(({data}) => {
-                this.products = data
+               this.products = data
             }).catch((error) => {
                 this.$root.$emit('error', error)
             })

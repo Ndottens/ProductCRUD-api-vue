@@ -8,7 +8,7 @@ This project contains the following features
 - Error/Success notifications
 - Image upload
 
-![Dashboard](darktheme.png)
+![Dashboard](dashboard.png)
 
 ## Todos
 - Language support
@@ -28,12 +28,15 @@ Setup your env file (database)
 - php artisan serve
 - npm run watch
 
+
+![show](show.png)
+
 ## Project Structure
 
 You can find the front-end/vue code in resources/js, the front-end communicates with our api (api.php) through axios requests.
 Each model has their own module in the frontend where we can call our axios requests globally.
 
-You can find the back-end code in the controllers. We use custom request for security, and we also validate them. There is no need to use services because our controller is already clean enough. 
+You can find the back-end code in the controllers. We use custom request for security, and we also validate them. There is no need to use services or repositories because our controller is already clean enough. 
 
 
 
